@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{{.Title}}</title>
+    <link rel="stylesheet" href="static/style.css"/>
+</head>
+<body>
+    <nav>
+        <div class="nav-buttons">
+            <a href="/" class="btn">Accueil</a>
+            <a href="/contact" class="btn">Contact</a>
+        </div>
+    </nav>
+
+    <img class="game-image" src="https://play-lh.googleusercontent.com/5WZPDYRm_qIoWl_y5TRT024nL-usQgY-bd7JDUHJU7vEiGGQS3uDtSnNgLWgUlWZjKA" alt="Puissance 4">
+
+    <p class="titre-jeu">{{.Title}}</p>
+    <p class="jeux-pp">Venez jouer en solo ou à plusieurs en vous affrontant à l'un des jeux les plus classiques du game !</p>
+
+    <div class="container">
+        <label class="switch">
+            <input type="checkbox" />
+            <span class="slider">
+                <span class="title">Play</span>
+                <span class="ball">
+                    <span class="icon">
+                        <svg
+                            class="w-6 h-6 text-gray-800 dark:text-white"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="25"
+                            height="25"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M8 18V6l8 6-8 6Z"
+                            ></path>
+                        </svg>
+                    </span>
+                </span>
+            </span>
+        </label>
+    </div>
+    <footer>
+  <p>&copy; 2025 Mon Site Puissance 4</p>
+  <p>Contact : emma.darmon@ynov.com</p>
+</footer>
+
+</body>
+</html>

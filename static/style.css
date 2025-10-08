@@ -1,0 +1,248 @@
+nav {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+nav h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+   background: linear-gradient(rgb(231, 49, 49), rgb(224, 134, 9));
+  background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-buttons a {
+  display: inline-block;
+  background: none;
+  border: 2px solid #46505b;
+  color: #0d0d0e;
+  padding: 8px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+.nav-buttons a:hover {
+  background-color: #adaeaf;
+  color: white;
+  border-color: #a2a5a8;
+}
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-buttons {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .nav-buttons button {
+    flex: 1;
+  }
+}
+.game-image {
+    width: 120px; 
+    height: 120px;
+    max-width: 200%;
+    display: block;
+    margin: 30px auto; 
+    border-radius: 10px; 
+    margin-top: 5%;
+}
+.titre-jeu {
+    font-size: 27px;
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(red, rgb(240, 147, 7));
+  background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.jeux-pp{
+        font-size: 20px;
+        text-align: center;
+        margin: 10px 0; 
+
+
+}
+.paragraphe-yy{
+        font-weight: bold;
+        text-align: center;
+        font-size: 200%;
+        margin-right: 20%;
+
+}
+
+
+.contact-form {
+    max-width: 400px;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+}
+
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 8px 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+    font-size: 14px;
+}
+
+.contact-form textarea {
+    height: 100px;
+}
+
+.contact-form button {
+    margin-top: 15px;
+    width: 100%;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #2980b9;
+}
+.jeux-jj{
+          float: left;
+        height: 88px;
+        width: 88px;
+        margin-left: 15%;
+         position: relative;
+    left: 670px; 
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+}
+
+.switch {
+  font-size: 0.875rem;
+  position: relative;
+  display: inline-block;
+  width: 9em;
+  height: 2.6em;
+}
+
+.switch input {
+  display: none;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch input:checked + .slider .ball {
+  box-shadow: 10px 10px 100px #7f8996;
+}
+
+.switch input:checked + .slider .title {
+  left: 40%;
+}
+.switch input:checked + .slider {
+  background-color: #8a5cd4;
+}
+.switch input:focus + .slider {
+  box-shadow: 10px 10px 100px #7f8996;
+}
+.switch input:checked + .slider .ball {
+  left: 72%;
+  transform: rotate(360deg);
+  box-shadow: none;
+  outline: 6px solid rgba(255, 255, 255, 0.278);
+}
+.switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #313033;
+  transition: all 0.4s;
+  border-radius: 30px;
+}
+.switch .slider .title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 600;
+  transition: all 0.4s;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.switch .slider .ball {
+  background-color: #ba3333;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  position: absolute;
+  left: -1px;
+  transition: 0.4s;
+}
+.switch .slider .ball .icon {
+  position: absolute;
+  top: 58%;
+  left: 53%;
+  transform: translate(-50%, -50%);
+  color: #313033;
+  font-size: 12px;
+}
+footer {
+  background-color: #333;    
+  color: #fff;               
+  text-align: center;       
+  padding: 15px;            
+  position: fixed;          
+  bottom: 0;                 
+  width: 100%;              
+  margin-right: 100%;
+}
