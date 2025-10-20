@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Puissance 4 - Facile</title>
+    <link rel="stylesheet" href="static/style.css"/>
+        <link rel="shortcut icon" type="image/png" href="https://play-lh.googleusercontent.com/qpXnChibl3OO3v04zhKob3p3bamQV7O-SuRxVw5Q8kAufKq7H3ARaSZ45kppMiSvhw=w240-h480-rw"/>
+</head>
+<body>
+    <nav>
+        <div class="nav-buttons">
+            <a href="/" class="btn">Accueil</a>
+            <a href="/contact" class="btn">Contact</a>
+                                
+        </div>
+    </nav>
+        <button class="player-turn">{{.Player1}}<br>Rouge</button>
+                                   <img class="vs-gg" src="/static/image/vs.png">
+
+    <button class="playerr-turn">{{.Player2}}<br>Jaune</button>
+
+
+   <div class="game-container">
+     <h2>Bienvenue dans le niveau Intermediaire 🎮</h2>
+
+    <table class="gamee-board">
+  {{ range .Grille }}
+  <tr>
+    {{ range . }}
+    <td class="cell">{{.}}</td>
+    {{ end }}
+  </tr>
+  {{ end }}
+</table>
+</div>
+    <footer>
+        <p>&copy; 2025 Mon Site Puissance 4</p>
+        <p>Contact : emma.darmon@ynov.com</p>
+    </footer>
+     
+  <div id="popupVictoire" class="popup-victoire">
+
+    <div class="popup-content">
+
+      <h2 id="messageVictoire">🏆 Vous avez gagné !</h2>
+                              <img class="light-gg" src="/static/image/téléchargement.png">
+
+      <a href="/intermediaire" class="btn-rejouer">🔁 Rejouer</a>
+
+
+    </div>
+  </div>
+
+  <script>
+  const cells = document.querySelectorAll('.cell');
+  let turn = 'jaune';
+  const rows = document.querySelectorAll('.gamee-board tr');
+  const grille = Array.from(rows).map(row => Array.from(row.cells));
+  const popup = document.getElementById('popupVictoire');
+  const message = document.getElementById('messageVictoire');
+
+  cells.forEach(cell => {
+    cell.addEventListener('click', () => {
+      const col = cell.cellIndex;
+      const columnCells = [...cell.parentElement.parentElement.rows].map(row => row.cells[col]);
+      const emptyCells = columnCells.filter(c => !c.querySelector('.pion'));
+      if (emptyCells.length === 0) return;
+
+      const targetCell = emptyCells[emptyCells.length - 1];
+      const pion = document.createElement('div');
+      pion.classList.add('pion', turn);
+      targetCell.appendChild(pion);
+
+      if (checkWin(turn)) {
+        message.textContent = `🎉 Le joueur ${turn.toUpperCase()} a gagné !`;
+        popup.classList.add('active');
+        return;
+      }
+
+      turn = turn === 'jaune' ? 'rouge' : 'jaune';
+    });
+  });
+
+  function checkWin(couleur) {
+    const lignes = grille.length;
+    const colonnes = grille[0].length;
+
+    function hasPion(i, j) {
+      const cell = grille[i]?.[j];
+      if (!cell) return false;
+      const pion = cell.querySelector('.pion');
+      return pion && pion.classList.contains(couleur);
+    }
+ if (isFull()) {
+      message.textContent = `🤝 Match nul ! La grille est complète.`;
+      popup.classList.add('active');
+      return;
+    }
+
+    for (let i = 0; i < lignes; i++) {
+      for (let j = 0; j < colonnes; j++) {
+        if (
+          (hasPion(i, j) && hasPion(i, j+1) && hasPion(i, j+2) && hasPion(i, j+3)) ||
+          (hasPion(i, j) && hasPion(i+1, j) && hasPion(i+2, j) && hasPion(i+3, j)) ||
+          (hasPion(i, j) && hasPion(i+1, j+1) && hasPion(i+2, j+2) && hasPion(i+3, j+3)) ||
+          (hasPion(i, j) && hasPion(i-1, j+1) && hasPion(i-2, j+2) && hasPion(i-3, j+3))
+        ) {
+          return true;
+        }
+      }
+    }
+
+    return false;
+  }
+  function isFull() {
+  return grille.every(row => row.every(cell => cell.querySelector('.pion')));
+}
+</script>
+</body>
+</html>

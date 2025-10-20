@@ -3,54 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title>{{.Title}}</title>
-    <link rel="stylesheet" href="static/style.css"/>
+    <link rel="stylesheet" href="./static/style.css"/>
+    <link rel="shortcut icon" type="image/png" href="https://play-lh.googleusercontent.com/qpXnChibl3OO3v04zhKob3p3bamQV7O-SuRxVw5Q8kAufKq7H3ARaSZ45kppMiSvhw=w240-h480-rw"/>
 </head>
 <body>
     <nav>
+
         <div class="nav-buttons">
             <a href="/" class="btn">Accueil</a>
             <a href="/contact" class="btn">Contact</a>
         </div>
+            <div class="mm-ll">
+
+        <h1>Puissance4 </h1>
     </nav>
-
-    <img class="game-image" src="https://play-lh.googleusercontent.com/5WZPDYRm_qIoWl_y5TRT024nL-usQgY-bd7JDUHJU7vEiGGQS3uDtSnNgLWgUlWZjKA" alt="Puissance 4">
-
+                   <img class="isuu-gg" src="/static/image/isuku.png">
     <p class="titre-jeu">{{.Title}}</p>
-    <p class="jeux-pp">Venez jouer en solo ou à plusieurs en vous affrontant à l'un des jeux les plus classiques du game !</p>
+    <p class="jeux-pp">Venez jouer en solo ou à plusieurs  en vous affrontant a l'un des jeux les plus classique du game !</p>
 
-    <div class="container">
-        <label class="switch">
-            <input type="checkbox" />
-            <span class="slider">
-                <span class="title">Play</span>
-                <span class="ball">
-                    <span class="icon">
-                        <svg
-                            class="w-6 h-6 text-gray-800 dark:text-white"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="25"
-                            height="25"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                stroke="currentColor"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M8 18V6l8 6-8 6Z"
-                            ></path>
-                        </svg>
-                    </span>
-                </span>
-            </span>
-        </label>
+    <form method="get" class="contact-form">
+        <h2>Choisissez un nom de joueur</h2>
+
+        <label for="joueur1">Joueur1:</label>
+        <input type="text" id="joueur1" name="joueur1" required>
+
+        <label for="joueur2">Joueur2:</label>
+        <input type="text" id="joueur2" name="joueur2" required>
+    <p>Choisissez votre niveau:</p>
+
+ <div class="level-buttons">
+        <button type="submit" formaction="/facile" class="btn-vert">Facile✅</button>
+         <div class="levell-buttons">
+        <button type="submit" formaction="/intermediaire" class="btn-orange">Intermédiaire⚡</button>
+                <div class="levelll-buttons">
+        <button type="submit" formaction="/extreme" class="btn-rouge">Extrême😈</button>
+
+
     </div>
-    <footer>
-  <p>&copy; 2025 Mon Site Puissance 4</p>
-  <p>Contact : emma.darmon@ynov.com</p>
-</footer>
+    </div>
+    </div>
+    </form>
 
+    <footer>
+        <p>&copy; 2025 Mon Site Puissance 4</p>
+                <p>Contact : emma.darmon@ynov.com</p>
+    </footer>
+     
 </body>
 </html>
